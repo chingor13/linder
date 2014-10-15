@@ -41,6 +41,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        AvvoAPIClient.fetchLawyers({(lawyers: NSArray) -> Void in
+            for lawyer: AnyObject in lawyers {
+                if let headshotUrl = lawyer["headshot_url"] as? String {
+                    var firstname = lawyer["firstname"],
+                    lastname = lawyer["lastname"]
+                    println("Got lawyer: \(firstname) \(lastname)")
+                    println(headshotUrl)
+                }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
