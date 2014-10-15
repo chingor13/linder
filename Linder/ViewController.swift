@@ -15,20 +15,28 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var yesButton: UIButton!
 
     @IBAction func swipeLeft(sender: AnyObject) {
-        println("swipe left")
+        deny()
     }
     @IBAction func swipeRight(sender: AnyObject) {
-        println("swipe right")
+        accept()
     }
     
     @IBAction func yesClick(sender: AnyObject) {
-        println("yes click");
+        accept()
     }
     
-    func gestureRecognizer(recognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) {
-        println("recevied swipe")
+    @IBAction func noClick(sender: AnyObject) {
+        deny()
     }
     
+    func deny() {
+        println("deny the current lawyer")
+    }
+    
+    func accept() {
+        println("accept the current lawyer")
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
