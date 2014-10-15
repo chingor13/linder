@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var noButton: UIButton!
@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func swipeLeft(sender: AnyObject) {
         deny()
     }
+    
     @IBAction func swipeRight(sender: AnyObject) {
         accept()
     }
