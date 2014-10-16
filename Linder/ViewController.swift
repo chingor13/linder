@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var lawyers: NSArray = NSArray()
     var currentLawyer: String?
     var locationManager:CLLocationManager!
+    var currentLocation: CLLocation?
 
     @IBAction func swipeLeft(sender: AnyObject) {
         deny()
@@ -75,10 +76,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setCurrentLocation(location: CLLocation) {
+        self.currentLocation = location
+        println("setting location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+    }
 
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-        println("locations = \(locations)")
-//        gpsResult.text = "success"
+        let lastLocation: CLLocation = locations.last as CLLocation
+        setCurrentLocation(lastLocation)
     }
 
 }
