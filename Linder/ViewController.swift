@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var noButton: UIButton!
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
 
     var lawyers: NSArray = NSArray()
     var currentLawyer: String?
+    var locationManager:CLLocationManager!
 
     @IBAction func swipeLeft(sender: AnyObject) {
         deny()
@@ -43,6 +45,14 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // start checking location
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
         // Do any additional setup after loading the view, typically from a nib.
         AvvoAPIClient.fetchLawyers({(fetchedLawyers: NSArray) -> Void in
             self.lawyers = fetchedLawyers
@@ -65,6 +75,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
+        println("locations = \(locations)")
+//        gpsResult.text = "success"
+    }
 
 }
 
