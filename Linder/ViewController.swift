@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
 
-    var lawyers: NSMutableArray = NSMutableArray()
+    var lawyers: NSArray = NSArray()
     var currentLawyer: String?
 
     @IBAction func swipeLeft(sender: AnyObject) {
@@ -45,17 +45,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         AvvoAPIClient.fetchLawyers({(fetchedLawyers: NSArray) -> Void in
-            for lawyer: AnyObject in fetchedLawyers {
-                if let headshotUrl = lawyer["headshot_url"] as? String {
-                    self.lawyers.addObject(headshotUrl)
-                    var firstname = lawyer["firstname"],
-                        lastname = lawyer["lastname"]
-                    println("Got lawyer: \(firstname) \(lastname)")
-                    println(headshotUrl)
-                }
-            }
-            self.setCurrentLawyer(self.lawyers[0] as String)
-//            self.currentLawyer = self.lawyers[0] as String
+            self.lawyers = fetchedLawyers
+            self.setCurrentLawyer((self.lawyers[0] as Lawyer).headshotUrl)
         })
     }
 

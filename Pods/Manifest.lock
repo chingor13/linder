@@ -1,0 +1,10 @@
+PODS:
+  - MDCSwipeToChoose (0.2.1)
+
+DEPENDENCIES:
+  - MDCSwipeToChoose
+
+SPEC CHECKSUMS:
+  MDCSwipeToChoose: 54f7b1675eff182cdc46c582360c7fca4c766a67
+
+COCOAPODS: 0.34.2
