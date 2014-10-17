@@ -17,7 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     var lawyers: NSArray = NSArray()
     var currentLawyer: String?
-    var locationManager:CLLocationManager!
+    var locationManager:CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation?
 
     @IBAction func swipeLeft(sender: AnyObject) {
@@ -48,12 +48,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // start checking location
-        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         
         // Do any additional setup after loading the view, typically from a nib.
         AvvoAPIClient.fetchLawyers({(fetchedLawyers: NSArray) -> Void in
@@ -71,11 +68,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.imageView.setNeedsDisplay()
         self.view.setNeedsDisplay()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func setCurrentLocation(location: CLLocation) {
         self.currentLocation = location
@@ -85,6 +77,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         let lastLocation: CLLocation = locations.last as CLLocation
         setCurrentLocation(lastLocation)
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        println("auth status change")
+        locationManager.startUpdatingLocation()
     }
 
 }
