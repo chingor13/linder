@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PAt-2m-n1L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Linder-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Linder" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                     <action selector="yesClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CEZ-Ba-thG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-d7-K4P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-d7-K4P">
                                 <rect key="frame" x="180" y="28" width="240" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3Tg-18-NeI"/>
@@ -57,6 +57,14 @@
                             <outletCollection property="gestureRecognizers" destination="pvD-42-Yg0" appends="YES" id="D75-HM-3b0"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Linder" id="MUC-cX-EIh">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="D2x-LU-mIP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Matches" id="djo-KP-sAJ">
+                            <connections>
+                                <segue destination="O2z-Le-3AZ" kind="show" identifier="showMatchesSeque" id="yd4-Hg-zR0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="tbl-d7-K4P" id="kwq-3G-duL"/>
                         <outlet property="noButton" destination="J7P-xD-wDf" id="m69-da-UEb"/>
@@ -75,6 +83,51 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="797" y="136"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="cAW-Nf-KoR">
+            <objects>
+                <tableViewController id="O2z-Le-3AZ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QOV-wv-PAz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikedLawyerCell" id="kKJ-7p-F8u">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kKJ-7p-F8u" id="AhP-Bx-DQD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O2z-Le-3AZ" id="IgY-JJ-pId"/>
+                            <outlet property="delegate" destination="O2z-Le-3AZ" id="pUs-ER-G22"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keA-xY-SRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="136"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wff-Cc-k8E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PAt-2m-n1L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GAn-9D-ABI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="NDf-jb-2JC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6u-12-JlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="136"/>
         </scene>
     </scenes>
 </document>
