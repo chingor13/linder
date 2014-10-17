@@ -10,6 +10,7 @@
 		1D496766DF7E57440C10EEFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6011BE9763F262D0C6E788E7 /* libPods.a */; };
 		27BEA5A819EE12B7000E24CA /* AvvoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEA5A719EE12B7000E24CA /* AvvoAPIClient.swift */; };
 		27BEA5D919EF72CF000E24CA /* Lawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEA5D819EF72CF000E24CA /* Lawyer.swift */; };
+		8D29BCF219F0FB92006193C0 /* LikedLawyersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */; };
 		8D7DB94519EE11AF00651BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94419EE11AF00651BCE /* AppDelegate.swift */; };
 		8D7DB94819EE11AF00651BCE /* Linder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94619EE11AF00651BCE /* Linder.xcdatamodeld */; };
 		8D7DB94A19EE11AF00651BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94919EE11AF00651BCE /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		27BEA5D819EF72CF000E24CA /* Lawyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lawyer.swift; sourceTree = "<group>"; };
 		3A5E8DA531C3EFA36B7A6BBD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6011BE9763F262D0C6E788E7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedLawyersTVC.swift; sourceTree = "<group>"; };
 		8D7DB93F19EE11AF00651BCE /* Linder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DB94319EE11AF00651BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7DB94419EE11AF00651BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				27BEA5D719EF72C2000E24CA /* Models */,
 				8D7DB94419EE11AF00651BCE /* AppDelegate.swift */,
 				8D7DB94919EE11AF00651BCE /* ViewController.swift */,
+				8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */,
 				8D7DB94B19EE11AF00651BCE /* Main.storyboard */,
 				8D7DB94E19EE11AF00651BCE /* Images.xcassets */,
 				8D7DB95019EE11AF00651BCE /* LaunchScreen.xib */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7DB94A19EE11AF00651BCE /* ViewController.swift in Sources */,
+				8D29BCF219F0FB92006193C0 /* LikedLawyersTVC.swift in Sources */,
 				27BEA5D919EF72CF000E24CA /* Lawyer.swift in Sources */,
 				8D7DB94519EE11AF00651BCE /* AppDelegate.swift in Sources */,
 				8D7DB94819EE11AF00651BCE /* Linder.xcdatamodeld in Sources */,

@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="797" y="136"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Liked LawyersTVC-->
         <scene sceneID="cAW-Nf-KoR">
             <objects>
-                <tableViewController id="O2z-Le-3AZ" sceneMemberID="viewController">
+                <tableViewController id="O2z-Le-3AZ" customClass="LikedLawyersTVC" customModule="Linder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QOV-wv-PAz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,9 +103,12 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="O2z-Le-3AZ" id="IgY-JJ-pId"/>
-                            <outlet property="delegate" destination="O2z-Le-3AZ" id="pUs-ER-G22"/>
+                            <outlet property="delegate" destination="O2z-Le-3AZ" id="zwH-X7-Ecp"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="QOV-wv-PAz" id="4Xt-9f-amY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keA-xY-SRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
