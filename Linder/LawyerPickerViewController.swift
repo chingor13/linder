@@ -27,7 +27,9 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         };
     
         var lpw: LawyerPickerView = LawyerPickerView(frame: self.view.bounds, options: options)
-        lpw.imageView.image = UIImage(named: "photo")
+        var headshotUrl = "http://placekitten.com/g/200/300"
+        var imageData: NSData = NSData(contentsOfURL: NSURL(string: headshotUrl))
+        lpw.imageView.image = UIImage(data: imageData)
         self.view.addSubview(lpw)
     }
 }
