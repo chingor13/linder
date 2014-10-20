@@ -10,6 +10,8 @@
 		1D496766DF7E57440C10EEFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6011BE9763F262D0C6E788E7 /* libPods.a */; };
 		27BEA5A819EE12B7000E24CA /* AvvoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEA5A719EE12B7000E24CA /* AvvoAPIClient.swift */; };
 		27BEA5D919EF72CF000E24CA /* Lawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEA5D819EF72CF000E24CA /* Lawyer.swift */; };
+		8D29BCF219F0FB92006193C0 /* LikedLawyersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */; };
+		8D29BCF419F1031A006193C0 /* LawyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29BCF319F1031A006193C0 /* LawyerViewController.swift */; };
 		8D7DB94519EE11AF00651BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94419EE11AF00651BCE /* AppDelegate.swift */; };
 		8D7DB94819EE11AF00651BCE /* Linder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94619EE11AF00651BCE /* Linder.xcdatamodeld */; };
 		8D7DB94A19EE11AF00651BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB94919EE11AF00651BCE /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 		8D7DB94F19EE11AF00651BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DB94E19EE11AF00651BCE /* Images.xcassets */; };
 		8D7DB95219EE11AF00651BCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DB95019EE11AF00651BCE /* LaunchScreen.xib */; };
 		8D7DB95E19EE11AF00651BCE /* LinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DB95D19EE11AF00651BCE /* LinderTests.swift */; };
+		8DB3484B19F4ACDF00D36913 /* LawyerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3484A19F4ACDF00D36913 /* LawyerPickerView.swift */; };
+		8DB3485119F4B52C00D36913 /* LawyerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3485019F4B52C00D36913 /* LawyerPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 		27BEA5D819EF72CF000E24CA /* Lawyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lawyer.swift; sourceTree = "<group>"; };
 		3A5E8DA531C3EFA36B7A6BBD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6011BE9763F262D0C6E788E7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedLawyersTVC.swift; sourceTree = "<group>"; };
+		8D29BCF319F1031A006193C0 /* LawyerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LawyerViewController.swift; sourceTree = "<group>"; };
 		8D7DB93F19EE11AF00651BCE /* Linder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DB94319EE11AF00651BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7DB94419EE11AF00651BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +51,9 @@
 		8D7DB95719EE11AF00651BCE /* LinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DB95C19EE11AF00651BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7DB95D19EE11AF00651BCE /* LinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinderTests.swift; sourceTree = "<group>"; };
+		8DB3484A19F4ACDF00D36913 /* LawyerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LawyerPickerView.swift; sourceTree = "<group>"; };
+		8DB3484D19F4B13200D36913 /* Linder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Linder-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DB3485019F4B52C00D36913 /* LawyerPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LawyerPickerViewController.swift; sourceTree = "<group>"; };
 		EA9134809F039B78749A2AC6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +87,7 @@
 		27BEA5D719EF72C2000E24CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27BEA5A719EE12B7000E24CA /* AvvoAPIClient.swift */,
 				27BEA5D819EF72CF000E24CA /* Lawyer.swift */,
 			);
 			name = Models;
@@ -106,15 +116,14 @@
 		8D7DB94119EE11AF00651BCE /* Linder */ = {
 			isa = PBXGroup;
 			children = (
+				8DB3484F19F4B4F400D36913 /* Views */,
+				8DB3484E19F4B4E300D36913 /* Controllers */,
 				27BEA5D719EF72C2000E24CA /* Models */,
-				8D7DB94419EE11AF00651BCE /* AppDelegate.swift */,
-				8D7DB94919EE11AF00651BCE /* ViewController.swift */,
 				8D7DB94B19EE11AF00651BCE /* Main.storyboard */,
 				8D7DB94E19EE11AF00651BCE /* Images.xcassets */,
 				8D7DB95019EE11AF00651BCE /* LaunchScreen.xib */,
 				8D7DB94619EE11AF00651BCE /* Linder.xcdatamodeld */,
 				8D7DB94219EE11AF00651BCE /* Supporting Files */,
-				27BEA5A719EE12B7000E24CA /* AvvoAPIClient.swift */,
 			);
 			path = Linder;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 		8D7DB94219EE11AF00651BCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D7DB94419EE11AF00651BCE /* AppDelegate.swift */,
+				8DB3484D19F4B13200D36913 /* Linder-Bridging-Header.h */,
 				8D7DB94319EE11AF00651BCE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -142,6 +153,25 @@
 				8D7DB95C19EE11AF00651BCE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DB3484E19F4B4E300D36913 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D7DB94919EE11AF00651BCE /* ViewController.swift */,
+				8D29BCF119F0FB92006193C0 /* LikedLawyersTVC.swift */,
+				8D29BCF319F1031A006193C0 /* LawyerViewController.swift */,
+				8DB3485019F4B52C00D36913 /* LawyerPickerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8DB3484F19F4B4F400D36913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DB3484A19F4ACDF00D36913 /* LawyerPickerView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		BC3C523FC0D5D65870A4EE75 /* Pods */ = {
@@ -289,9 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7DB94A19EE11AF00651BCE /* ViewController.swift in Sources */,
+				8D29BCF419F1031A006193C0 /* LawyerViewController.swift in Sources */,
+				8D29BCF219F0FB92006193C0 /* LikedLawyersTVC.swift in Sources */,
 				27BEA5D919EF72CF000E24CA /* Lawyer.swift in Sources */,
 				8D7DB94519EE11AF00651BCE /* AppDelegate.swift in Sources */,
+				8DB3485119F4B52C00D36913 /* LawyerPickerViewController.swift in Sources */,
 				8D7DB94819EE11AF00651BCE /* Linder.xcdatamodeld in Sources */,
+				8DB3484B19F4ACDF00D36913 /* LawyerPickerView.swift in Sources */,
 				27BEA5A819EE12B7000E24CA /* AvvoAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +453,8 @@
 				INFOPLIST_FILE = Linder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Linder/Linder-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -430,6 +466,8 @@
 				INFOPLIST_FILE = Linder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Linder/Linder-Bridging-Header.h";
 			};
 			name = Release;
 		};
