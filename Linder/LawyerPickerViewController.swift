@@ -38,17 +38,28 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         constructNopeButton()
         constructLikeButton()
     }
+
+    // TODO: save in CoreData
+    func saveLawyer(lawyer: Lawyer) -> Void {
+        self.savedLawyers.append(lawyer)
+    }
+
+    // TODO: save in CoreData
+    func skipLawyer(lawyer: Lawyer) -> Void {
+        println("skipping lawyer")
+    }
     
     func view(view: UIView!, wasChosenWithDirection direction: MDCSwipeDirection) {
+        let lpv = view as LawyerPickerView
         if (direction == MDCSwipeDirection.Right) {
-            let lpv = view as LawyerPickerView
             if(lpv.lawyer != nil) {
-                self.savedLawyers.append(lpv.lawyer!)
-            } else {
-                println("no lawyer in view???")
+                saveLawyer(lpv.lawyer!)
             }
             println("Lawyer saved!")
         } else {
+            if(lpv.lawyer != nil) {
+                skipLawyer(lpv.lawyer!)
+            }
             println("Lawyer skipped!")
         }
         
