@@ -10,13 +10,15 @@ import UIKit
 
 class LawyerViewController: UIViewController {
     
-    var lawyer: Lawyer? {
-        didSet {
-            println("set lawyer")
-        }
-    }
+    @IBOutlet weak var imageView: UIImageView!
     
+    var lawyer: Lawyer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(self.lawyer != nil) {
+            self.imageView.image = lawyer!.headshot
+        }
     }
 }

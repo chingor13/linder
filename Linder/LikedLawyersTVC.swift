@@ -25,7 +25,7 @@ class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("LikedLawyerCell", forIndexPath: indexPath) as UITableViewCell
                                 
         let lawyer = lawyerForIndexPath(indexPath)
-        cell.textLabel!.text = lawyer.firstname + " " + lawyer.lastname
+        cell.textLabel!.text = lawyer.fullname()
         return cell
     }
     
