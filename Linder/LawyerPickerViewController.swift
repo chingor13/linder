@@ -156,6 +156,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     func constructBackground() {
         let frownView: UIImageView = UIImageView(image: UIImage(named: "frown"))
         frownView.contentMode = UIViewContentMode.Center
+        frownView.alpha = 0.5
         frownView.frame = CGRectMake(
             CGRectGetMinX(bottomCardView.frame),
             CGRectGetMinY(bottomCardView.frame),
@@ -167,9 +168,11 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             CGRectGetMinX(frownView.frame),
             CGRectGetMaxY(frownView.frame),
             CGRectGetWidth(frownView.frame),
-            16
+            18
         ))
-        noMoreLabel.text = "No more lawyers."
+        noMoreLabel.font = UIFont.systemFontOfSize(20)
+        noMoreLabel.alpha = 0.5
+        noMoreLabel.text = "No more lawyers"
         noMoreLabel.textAlignment = NSTextAlignment.Center
         
         self.view.insertSubview(frownView, atIndex: 0)
