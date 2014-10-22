@@ -11,6 +11,9 @@ import Foundation
 
 class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     
+    let buttonDiameter: CGFloat = 50
+    let buttonHPadding: CGFloat = 80
+    
     var lawyers: Array<Lawyer> = Array()
     var topCardView: UIView = UIView()
     var bottomCardView: UIView = UIView()
@@ -29,10 +32,16 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         
         bottomCardView = createLawyerView(bottomCardViewFrame(), lawyer: self.lawyers.removeAtIndex(0))
         self.view.insertSubview(bottomCardView, belowSubview: topCardView)
+        
+        constructBackground()
+        constructNopeButton()
+        constructLikeButton()
     }
     
     func view(view: UIView!, wasChosenWithDirection direction: MDCSwipeDirection) {
-        println("Was chosen!!!!!!!!!!!!")
+        if (direction == MDCSwipeDirection.Right) {
+            println("Lawyer saved!")
+        }
         
         topCardView = bottomCardView
         
@@ -81,6 +90,72 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         )
     }
     
+    func buttonY() -> CGFloat {
+        return CGRectGetMaxY(self.bottomCardView.frame) +
+            ((CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.bottomCardView.frame) - buttonDiameter) / 2)
+    }
+    
+    func constructNopeButton() {
+        let frame: CGRect = CGRectMake(
+            buttonHPadding,
+            buttonY(),
+            buttonDiameter,
+            buttonDiameter
+        )
+        let button: UIButton = UIButton(frame: frame)
+        button.setImage(UIImage(named: "nope"), forState: UIControlState.Normal)
+        
+        button.addTarget(self, action: "nopeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(button)
+    }
+    
+    func constructLikeButton() {
+        let frame: CGRect = CGRectMake(
+            CGRectGetWidth(self.view.bounds) - buttonDiameter - buttonHPadding,
+            buttonY(),
+            buttonDiameter,
+            buttonDiameter
+        )
+        let button: UIButton = UIButton(frame: frame)
+        button.setImage(UIImage(named: "liked"), forState: UIControlState.Normal)
+        
+        button.addTarget(self, action: "likeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(button)
+    }
+    
+    func nopeTopCardView() {
+        self.topCardView.mdc_swipe(MDCSwipeDirection.Left)
+    }
+    
+    func likeTopCardView() {
+        self.topCardView.mdc_swipe(MDCSwipeDirection.Right)
+    }
+    
+    func constructBackground() {
+        let frownView: UIImageView = UIImageView(image: UIImage(named: "frown"))
+        frownView.contentMode = UIViewContentMode.Center
+        frownView.frame = CGRectMake(
+            CGRectGetMinX(bottomCardView.frame),
+            CGRectGetMinY(bottomCardView.frame),
+            CGRectGetWidth(bottomCardView.frame),
+            CGRectGetWidth(bottomCardView.frame)
+        )
+        
+        let noMoreLabel: UILabel = UILabel(frame: CGRectMake(
+            CGRectGetMinX(frownView.frame),
+            CGRectGetMaxY(frownView.frame),
+            CGRectGetWidth(frownView.frame),
+            16
+        ))
+        noMoreLabel.text = "No more lawyers."
+        noMoreLabel.textAlignment = NSTextAlignment.Center
+        
+        self.view.insertSubview(frownView, atIndex: 0)
+        self.view.insertSubview(noMoreLabel, atIndex: 0)
+    }
+    
     func createLawyerView(frame: CGRect, lawyer: Lawyer) -> LawyerPickerView {
         var options: MDCSwipeToChooseViewOptions = MDCSwipeToChooseViewOptions()
         options.delegate = self
@@ -96,10 +171,6 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
                 CGRectGetWidth(frame),
                 CGRectGetHeight(frame)
             )
-            
-            //if (state.thresholdRatio == 1 && state.direction == MDCSwipeDirection.Left) {
-                //println("Let go now to delete the photo!")
-            //}
         };
         
         var lpw: LawyerPickerView = LawyerPickerView(frame: frame, lawyer: lawyer, options: options)
