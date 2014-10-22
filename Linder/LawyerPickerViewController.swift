@@ -17,6 +17,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     var lawyers: Array<Lawyer> = Array()
     var topCardView: UIView = UIView()
     var bottomCardView: UIView = UIView()
+    var savedLawyers: Array<Lawyer> = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,15 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     func view(view: UIView!, wasChosenWithDirection direction: MDCSwipeDirection) {
         if (direction == MDCSwipeDirection.Right) {
+            let lpv = view as LawyerPickerView
+            if(lpv.lawyer != nil) {
+                self.savedLawyers.append(lpv.lawyer!)
+            } else {
+                println("no lawyer in view???")
+            }
             println("Lawyer saved!")
+        } else {
+            println("Lawyer skipped!")
         }
         
         topCardView = bottomCardView
@@ -180,6 +189,6 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let controller: LikedLawyersTVC = segue.destinationViewController as LikedLawyersTVC
-        controller.lawyers = self.lawyers
+        controller.lawyers = self.savedLawyers
     }
 }
