@@ -135,8 +135,8 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         )
         
         button.addTarget(self, action: "nopeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        self.view.addSubview(button)
+
+        self.view.insertSubview(button, atIndex: 0)
     }
     
     func constructLikeButton() {
@@ -156,7 +156,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         
         button.addTarget(self, action: "likeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
         
-        self.view.addSubview(button)
+        self.view.insertSubview(button, atIndex: 0)
     }
     
     func nopeTopCardView() {
