@@ -18,4 +18,12 @@ class Lawyer {
         self.lastname = lastname
         self.headshot = headshot
     }
+    
+    func fullname() -> String {
+        return self.firstname + " " + self.lastname
+    }
+    
+    func description() -> String {
+        return fullname()
+    }
 }

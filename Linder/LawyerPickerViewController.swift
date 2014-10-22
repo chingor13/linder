@@ -106,4 +106,9 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         
         return lpw
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller: LikedLawyersTVC = segue.destinationViewController as LikedLawyersTVC
+        controller.lawyers = self.lawyers
+    }
 }

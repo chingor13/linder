@@ -1,91 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YNJ-H4-Q8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wqE-4z-8rO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Linder-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Linder" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJa-hG-YmM">
-                                <rect key="frame" x="390" y="409" width="30" height="30"/>
-                                <state key="normal" title="Yes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="yesClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CEZ-Ba-thG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7P-xD-wDf">
-                                <rect key="frame" x="180" y="409" width="30" height="30"/>
-                                <state key="normal" title="No">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="noClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lep-qm-gae"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-d7-K4P">
-                                <rect key="frame" x="180" y="72" width="240" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="3Tg-18-NeI"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="tbl-d7-K4P" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="0eS-Fl-c8j"/>
-                            <constraint firstItem="tbl-d7-K4P" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="Des-n4-9Na"/>
-                            <constraint firstItem="J7P-xD-wDf" firstAttribute="top" secondItem="tbl-d7-K4P" secondAttribute="bottom" constant="81" id="Eyf-ck-wBy"/>
-                            <constraint firstItem="J7P-xD-wDf" firstAttribute="baseline" secondItem="JJa-hG-YmM" secondAttribute="baseline" id="MwZ-9O-g8H"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="J7P-xD-wDf" secondAttribute="bottom" constant="161" id="Pmh-g1-0RS"/>
-                            <constraint firstItem="tbl-d7-K4P" firstAttribute="trailing" secondItem="JJa-hG-YmM" secondAttribute="trailing" id="k87-OE-UlM"/>
-                            <constraint firstItem="tbl-d7-K4P" firstAttribute="leading" secondItem="J7P-xD-wDf" secondAttribute="leading" id="q3x-sT-Iak"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="t6I-jk-xxg" appends="YES" id="nZn-JI-fz7"/>
-                            <outletCollection property="gestureRecognizers" destination="pvD-42-Yg0" appends="YES" id="D75-HM-3b0"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" title="Linder" id="MUC-cX-EIh">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="D2x-LU-mIP"/>
-                        <barButtonItem key="rightBarButtonItem" title="Matches" id="djo-KP-sAJ">
-                            <connections>
-                                <segue destination="O2z-Le-3AZ" kind="show" identifier="showMatchesSeque" id="yd4-Hg-zR0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imageView" destination="tbl-d7-K4P" id="kwq-3G-duL"/>
-                        <outlet property="noButton" destination="J7P-xD-wDf" id="m69-da-UEb"/>
-                        <outlet property="yesButton" destination="JJa-hG-YmM" id="nRZ-CI-HeE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="t6I-jk-xxg">
-                    <connections>
-                        <action selector="swipeRight:" destination="vXZ-lx-hvc" id="cY9-IA-JIk"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="pvD-42-Yg0">
-                    <connections>
-                        <action selector="swipeLeft:" destination="vXZ-lx-hvc" id="JIn-3G-kf4"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="797" y="136"/>
-        </scene>
-        <!--Lawyer Picker View Controller-->
         <scene sceneID="pEu-EG-ujp">
             <objects>
                 <viewController id="YNJ-H4-Q8i" customClass="LawyerPickerViewController" customModule="Linder" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,10 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Linder" id="c6q-OX-MSb">
+                        <barButtonItem key="rightBarButtonItem" title="Matches" id="MFi-8Y-W1p">
+                            <connections>
+                                <segue destination="O2z-Le-3AZ" kind="show" id="xyB-Ys-hJP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fE-tR-w99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="824"/>
+            <point key="canvasLocation" x="789" y="136"/>
         </scene>
         <!--Liked LawyersTVC-->
         <scene sceneID="cAW-Nf-KoR">
@@ -118,7 +44,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LLn-9E-ltN" kind="showDetail" id="bX4-SF-X7M"/>
+                                    <segue destination="LLn-9E-ltN" kind="show" id="5Cl-Pc-UJS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -135,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1495" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--Lawyer View Controller-->
         <scene sceneID="2ln-Bh-2Wi">
             <objects>
-                <viewController id="LLn-9E-ltN" sceneMemberID="viewController">
+                <viewController id="LLn-9E-ltN" customClass="LawyerViewController" customModule="Linder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J2U-tW-QQg"/>
                         <viewControllerLayoutGuide type="bottom" id="Bli-WX-KxB"/>
@@ -154,22 +80,22 @@
             <point key="canvasLocation" x="2198" y="136"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="wff-Cc-k8E">
+        <scene sceneID="DbH-lR-Jb0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PAt-2m-n1L" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wqE-4z-8rO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GAn-9D-ABI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ha9-KR-MLT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="NDf-jb-2JC"/>
+                        <segue destination="YNJ-H4-Q8i" kind="relationship" relationship="rootViewController" id="OTf-Ta-b0M"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X6u-12-JlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8OM-qM-SVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="136"/>
+            <point key="canvasLocation" x="-10" y="136"/>
         </scene>
     </scenes>
 </document>

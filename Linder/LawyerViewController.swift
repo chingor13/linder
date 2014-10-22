@@ -10,7 +10,11 @@ import UIKit
 
 class LawyerViewController: UIViewController {
     
-    var lawyer: Lawyer?
+    var lawyer: Lawyer? {
+        didSet {
+            println("set lawyer")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

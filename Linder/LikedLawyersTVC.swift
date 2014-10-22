@@ -10,6 +10,12 @@ import UIKit
 
 class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
     
+    var lawyers: Array<Lawyer> = Array() {
+        didSet {
+            println("set lawyers")
+        }
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -17,12 +23,25 @@ class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("LikedLawyerCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = "Test"
+                                
+        let lawyer = lawyerForIndexPath(indexPath)
+        cell.textLabel!.text = lawyer.firstname + " " + lawyer.lastname
         return cell
     }
     
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return lawyers.count
+    }
+    
+    func lawyerForIndexPath(indexPath: NSIndexPath) -> Lawyer {
+        return lawyers[indexPath.row]
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller: LawyerViewController = segue.destinationViewController as LawyerViewController
+        let lawyer = lawyerForIndexPath(self.tableView.indexPathForSelectedRow()!)
+        controller.lawyer = lawyer
+        controller.title = lawyer.fullname()
     }
 }
