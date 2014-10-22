@@ -12,7 +12,7 @@ import Foundation
 class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     let buttonDiameter: CGFloat = 50
-    let buttonHPadding: CGFloat = 80
+    let buttonHPadding: CGFloat = 90
     
     var lawyers: Array<Lawyer> = Array()
     var topCardView: UIView = UIView()
@@ -122,8 +122,17 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             buttonDiameter,
             buttonDiameter
         )
-        let button: UIButton = UIButton(frame: frame)
+        let button: UIButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = frame
+        
         button.setImage(UIImage(named: "nope"), forState: UIControlState.Normal)
+        
+        button.tintColor = UIColor(
+            red: 247.0/255.0,
+            green: 91.0/255.0,
+            blue: 37.0/255.0,
+            alpha: 1.0
+        )
         
         button.addTarget(self, action: "nopeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -137,10 +146,15 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             buttonDiameter,
             buttonDiameter
         )
-        let button: UIButton = UIButton(frame: frame)
+        
+        let button: UIButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = frame
+        
         button.setImage(UIImage(named: "liked"), forState: UIControlState.Normal)
         
-        button.addTarget(self, action: "likeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
+        button.tintColor = UIColor.blueColor()
+        
+        button.addTarget(self, action: "likeTopCardView:", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(button)
     }
