@@ -25,7 +25,16 @@ class LawyerPickerView : MDCSwipeToChooseView {
         self.autoresizingMask = UIViewAutoresizing.FlexibleHeight |
             UIViewAutoresizing.FlexibleWidth |
             UIViewAutoresizing.FlexibleBottomMargin
+        
         self.imageView.autoresizingMask = self.autoresizingMask
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        self.imageView.frame = CGRectMake(
+            2,
+            2,
+            CGRectGetWidth(self.bounds) - 4,
+            CGRectGetHeight(self.bounds) - 4
+        )
         
         constructInfoView()
         loadImageView()
@@ -57,15 +66,19 @@ class LawyerPickerView : MDCSwipeToChooseView {
     }
     
     func constructNameLabel() {
-        let nameLabelFrame = CGRectMake(
-            5,
-            5,
-            CGRectGetWidth(infoView.bounds),
-            18
-        )
+//        let nameLabelFrame = CGRectMake(
+//            5,
+//            5,
+//            CGRectGetWidth(infoView.bounds),
+//            18
+//        )
 
-        let nameLabel: UILabel = UILabel(frame: nameLabelFrame)
+        let nameLabel: UILabel = UILabel(frame: infoView.bounds)
         nameLabel.text = "\(lawyer!.firstname) \(lawyer!.lastname)"
+        nameLabel.textAlignment = NSTextAlignment.Center
+        //nameLabel.textRectForBounds(nameLabel.bounds, limitedToNumberOfLines: 1)
+        nameLabel.font = UIFont.systemFontOfSize(20.0)
+        nameLabel.adjustsFontSizeToFitWidth = true
         
         infoView.addSubview(nameLabel)
     }

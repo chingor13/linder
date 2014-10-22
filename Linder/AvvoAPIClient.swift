@@ -16,24 +16,24 @@ class AvvoAPIClient {
                 lastname: "Chiles",
                 headshot: UIImage(named: "jackie")!
             ),
-            Lawyer(firstname: "Hyper",
-                lastname: "Chicken",
-                headshot: UIImage(named: "hyper")!
+            Lawyer(firstname: "Lionel",
+                lastname: "Hutz",
+                headshot: UIImage(named: "lionel")!
             ),
             Lawyer(firstname: "Bob",
                 lastname: "Loblaw",
                 headshot: UIImage(named: "bob")!
             ),
-            Lawyer(firstname: "Lionel",
-                lastname: "Hutz",
-                headshot: UIImage(named: "lionel")!
+            Lawyer(firstname: "Hyper",
+                lastname: "Chicken",
+                headshot: UIImage(named: "hyper")!
             ),
             Lawyer(firstname: "Saul",
                 lastname: "Goodman",
                 headshot: UIImage(named: "saul")!
             ),
-            Lawyer(firstname: "Blue",
-                lastname: "Hair",
+            Lawyer(firstname: "Blue Haired",
+                lastname: "Lawyer",
                 headshot: UIImage(named: "blue")!
             )
         ]
