@@ -12,9 +12,30 @@ class AvvoAPIClient {
     
     class func fetchLawyers(lawyerHandler: (Array<Lawyer>) -> ()) -> Void {
         var lawyers: Array<Lawyer> = [
-            Lawyer(firstname: "Jackie", lastname: "Chiles", headshotUrl: "http://www.thehollywoodnews.com/wp-content/uploads/Jackie-Chiles1.jpg"),
-            Lawyer(firstname: "Bob", lastname: "Loblaw", headshotUrl: "http://img3.wikia.nocookie.net/__cb20121117203508/arresteddevelopment/images/e/e6/3x3_Bob_Loblaw.png"),
-            Lawyer(firstname: "Barry", lastname: "Zuckercorn", headshotUrl: "http://i.guim.co.uk/static/w-620/h--/q-95/sys-images/Media/Columnists/Columnists/2011/6/14/1308048837538/Arrested-Development-Henr-007.jpg")
+            Lawyer(firstname: "Jackie",
+                lastname: "Chiles",
+                headshot: UIImage(named: "jackie")!
+            ),
+            Lawyer(firstname: "Hyper",
+                lastname: "Chicken",
+                headshot: UIImage(named: "hyper")!
+            ),
+            Lawyer(firstname: "Bob",
+                lastname: "Loblaw",
+                headshot: UIImage(named: "bob")!
+            ),
+            Lawyer(firstname: "Lionel",
+                lastname: "Hutz",
+                headshot: UIImage(named: "lionel")!
+            ),
+            Lawyer(firstname: "Saul",
+                lastname: "Goodman",
+                headshot: UIImage(named: "saul")!
+            ),
+            Lawyer(firstname: "Blue",
+                lastname: "Hair",
+                headshot: UIImage(named: "blue")!
+            )
         ]
         
         lawyerHandler(lawyers)

@@ -11,11 +11,11 @@ import Foundation
 class Lawyer {
     var firstname: String
     var lastname: String
-    var headshotUrl: String
+    var headshot: UIImage
     
-    init(firstname: String, lastname: String, headshotUrl: String) {
+    init(firstname: String, lastname: String, headshot: UIImage) {
         self.firstname = firstname
         self.lastname = lastname
-        self.headshotUrl = headshotUrl
+        self.headshot = headshot
     }
 }

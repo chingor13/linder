@@ -55,7 +55,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         AvvoAPIClient.fetchLawyers({(fetchedLawyers: Array<Lawyer>) -> Void in
             self.lawyers = fetchedLawyers
-            self.setCurrentLawyer((self.lawyers[0] as Lawyer).headshotUrl)
         })
     }
 

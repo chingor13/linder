@@ -53,8 +53,7 @@ class LawyerPickerView : MDCSwipeToChooseView {
     }
     
     func loadImageView() {
-        let imageData: NSData = NSData(contentsOfURL: NSURL(string: self.lawyer!.headshotUrl)!)!
-        self.imageView.image = UIImage(data: imageData)
+        self.imageView.image = self.lawyer?.headshot
     }
     
     func constructNameLabel() {
