@@ -53,7 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         // Do any additional setup after loading the view, typically from a nib.
-        AvvoAPIClient.fetchLawyers({(fetchedLawyers: NSArray) -> Void in
+        AvvoAPIClient.fetchLawyers({(fetchedLawyers: Array<Lawyer>) -> Void in
             self.lawyers = fetchedLawyers
             self.setCurrentLawyer((self.lawyers[0] as Lawyer).headshotUrl)
         })
@@ -62,7 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func setCurrentLawyer(headshotUrl: String) {
         self.currentLawyer = headshotUrl
         println("setting headshot")
-        let imageData: NSData = NSData(contentsOfURL: NSURL(string: headshotUrl))
+        let imageData: NSData = NSData(contentsOfURL: NSURL(string: headshotUrl)!)!
         println("loaded data")
         self.imageView.image = UIImage(data: imageData)
         self.imageView.setNeedsDisplay()

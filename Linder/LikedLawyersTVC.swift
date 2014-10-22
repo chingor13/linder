@@ -17,7 +17,7 @@ class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("LikedLawyerCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel!.text = "Test"
+        cell.textLabel.text = "Test"
         return cell
     }
     
