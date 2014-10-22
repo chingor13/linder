@@ -154,7 +154,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         
         button.tintColor = UIColor.blueColor()
         
-        button.addTarget(self, action: "likeTopCardView:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "likeTopCardView", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(button)
     }
