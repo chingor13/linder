@@ -60,7 +60,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     func topCardViewFrame() -> CGRect {
         let hPadding: CGFloat = 40
         let topPadding:CGFloat = 80
-        let bottomPadding:CGFloat = 200
+        let bottomPadding:CGFloat = 270
         
         return CGRectMake(
             hPadding,
