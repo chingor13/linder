@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     
@@ -19,8 +20,14 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     var bottomCardView: UIView = UIView()
     var savedLawyers: Array<Lawyer> = Array()
     
+    var databaseDocument: UIManagedDocument?
+    var managedObjectContext: NSManagedObjectContext?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Load the database
+        loadDatabase()
         
         // Fetch some lawyers
         AvvoAPIClient.fetchLawyers({(fetchedLawyers: Array<Lawyer>) -> Void in
@@ -37,6 +44,40 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
         constructBackground()
         constructNopeButton()
         constructLikeButton()
+    }
+    
+    func loadDatabase() -> Void {
+        let fileManager = NSFileManager.defaultManager()
+        let documentName = "LawyerDatabase"
+        let documentsDirectory = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL
+        let databaseURL = documentsDirectory.URLByAppendingPathComponent(documentName)
+        self.databaseDocument = UIManagedDocument(fileURL: databaseURL)
+        if(fileManager.fileExistsAtPath(databaseURL.path!)) {
+            println("file exists")
+            databaseDocument!.openWithCompletionHandler({ (success) -> Void in
+                if(success) {
+                    println("file successfully opened")
+                    self.databaseIsReady()
+                } else {
+                    println("file failed to open")
+                }
+            })
+        } else {
+            println("file doesn't exist - create it")
+            databaseDocument!.saveToURL(databaseURL, forSaveOperation:UIDocumentSaveOperation.ForCreating, completionHandler: { (success) -> Void in
+                if(success) {
+                    println("file successfully saved")
+                    self.databaseIsReady()
+                } else {
+                    println("file failed to save")
+                }
+            })
+        }
+    }
+    
+    func databaseIsReady() -> Void {
+        println("database is ready")
+        self.managedObjectContext = databaseDocument!.managedObjectContext
     }
 
     // TODO: save in CoreData
