@@ -8,11 +8,12 @@
 
 import UIKit
 
-class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
+class LikedLawyersTVC: UITableViewController
+{
     
     var lawyers: Array<Lawyer> = Array() {
         didSet {
-            println("set lawyers")
+            print("set lawyers")
         }
     }
     
@@ -21,11 +22,12 @@ class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView,
-                            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+                            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("LikedLawyerCell", forIndexPath: indexPath) as UITableViewCell
                                 
         let lawyer = lawyerForIndexPath(indexPath)
-        cell.textLabel.text = lawyer.fullname()
+        cell.textLabel!.text = lawyer.fullname()
         return cell
     }
     
@@ -39,8 +41,8 @@ class LikedLawyersTVC: UITableViewController, UITableViewDataSource {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller: LawyerViewController = segue.destinationViewController as LawyerViewController
-        let lawyer = lawyerForIndexPath(self.tableView.indexPathForSelectedRow()!)
+        let controller: LawyerViewController = segue.destinationViewController as! LawyerViewController
+        let lawyer = lawyerForIndexPath(self.tableView.indexPathForSelectedRow!)
         controller.lawyer = lawyer
         controller.title = lawyer.fullname()
     }

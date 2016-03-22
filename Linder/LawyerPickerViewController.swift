@@ -46,21 +46,21 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
 
     // TODO: save in CoreData
     func skipLawyer(lawyer: Lawyer) -> Void {
-        println("skipping lawyer")
+        print("skipping lawyer")
     }
     
     func view(view: UIView!, wasChosenWithDirection direction: MDCSwipeDirection) {
-        let lpv = view as LawyerPickerView
+        let lpv = view as! LawyerPickerView
         if (direction == MDCSwipeDirection.Right) {
             if(lpv.lawyer != nil) {
                 saveLawyer(lpv.lawyer!)
             }
-            println("Lawyer saved!")
+            print("Lawyer saved!")
         } else {
             if(lpv.lawyer != nil) {
                 skipLawyer(lpv.lawyer!)
             }
-            println("Lawyer skipped!")
+            print("Lawyer skipped!")
         }
         
         topCardView = bottomCardView
@@ -122,7 +122,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             buttonDiameter,
             buttonDiameter
         )
-        let button: UIButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button: UIButton = UIButton(type: UIButtonType.System)
         button.frame = frame
         
         button.setImage(UIImage(named: "nope"), forState: UIControlState.Normal)
@@ -147,7 +147,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             buttonDiameter
         )
         
-        let button: UIButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button: UIButton = UIButton(type: UIButtonType.System)
         button.frame = frame
         
         button.setImage(UIImage(named: "liked"), forState: UIControlState.Normal)
@@ -194,7 +194,7 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
     }
     
     func createLawyerView(frame: CGRect, lawyer: Lawyer) -> LawyerPickerView {
-        var options: MDCSwipeToChooseViewOptions = MDCSwipeToChooseViewOptions()
+        let options: MDCSwipeToChooseViewOptions = MDCSwipeToChooseViewOptions()
         options.delegate = self
         options.likedText = "Keep"
         options.likedColor = UIColor.blueColor()
@@ -210,13 +210,13 @@ class LawyerPickerViewController: UIViewController, MDCSwipeToChooseDelegate {
             )
         };
         
-        var lpw: LawyerPickerView = LawyerPickerView(frame: frame, lawyer: lawyer, options: options)
+        let lpw: LawyerPickerView = LawyerPickerView(frame: frame, lawyer: lawyer, options: options)
         
         return lpw
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller: LikedLawyersTVC = segue.destinationViewController as LikedLawyersTVC
+        let controller: LikedLawyersTVC = segue.destinationViewController as! LikedLawyersTVC
         controller.lawyers = self.savedLawyers
     }
 }
