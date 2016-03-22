@@ -12,7 +12,7 @@ class LawyerPickerView : MDCSwipeToChooseView {
     var lawyer: Lawyer?
     var infoView: UIView = UIView()
     
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
@@ -22,9 +22,7 @@ class LawyerPickerView : MDCSwipeToChooseView {
         self.lawyer = lawyer
         
         // Setup resizing masks
-        self.autoresizingMask = UIViewAutoresizing.FlexibleHeight |
-            UIViewAutoresizing.FlexibleWidth |
-            UIViewAutoresizing.FlexibleBottomMargin
+        self.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleBottomMargin]
         
         self.imageView.autoresizingMask = self.autoresizingMask
         self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
@@ -53,8 +51,7 @@ class LawyerPickerView : MDCSwipeToChooseView {
         infoView = UIView(frame: infoViewFrame)
         infoView.backgroundColor = UIColor.whiteColor()
         infoView.clipsToBounds = true
-        infoView.autoresizingMask = UIViewAutoresizing.FlexibleWidth |
-            UIViewAutoresizing.FlexibleTopMargin;
+        infoView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleTopMargin];
         
         self.addSubview(infoView)
         

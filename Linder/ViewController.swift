@@ -9,7 +9,8 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate
+{
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var noButton: UIButton!
@@ -17,9 +18,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     var lawyers: NSArray = NSArray()
     var currentLawyer: String?
-    var locationManager:CLLocationManager = CLLocationManager()
+    {
+        get
+        {
+            return _currentLawyer
+        }
+        set
+        {
+            _currentLawyer = newValue
+            print("setting headshot")
+            let imageData: NSData = NSData(contentsOfURL: NSURL(string: _currentLawyer!)!)!
+            print("loaded data")
+            self.imageView.image = UIImage(data: imageData)
+            self.imageView.setNeedsDisplay()
+            self.view.setNeedsDisplay()
+        }
+    }
+    
     var currentLocation: CLLocation?
+    {
+        get
+        {
+            return _currentLocation
+        }
+        set
+        {
+            _currentLocation = newValue
+        }
+    }
+    
+    var locationManager:CLLocationManager = CLLocationManager()
 
+    private var _currentLawyer : String?
+    private var _currentLocation : CLLocation?
+    
     @IBAction func swipeLeft(sender: AnyObject) {
         deny()
     }
@@ -37,11 +69,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func deny() {
-        println("deny the current lawyer")
+        print("deny the current lawyer")
     }
     
     func accept() {
-        println("accept the current lawyer")
+        print("accept the current lawyer")
     }
         
     override func viewDidLoad() {
@@ -57,30 +89,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.lawyers = fetchedLawyers
         })
     }
-
-    func setCurrentLawyer(headshotUrl: String) {
-        self.currentLawyer = headshotUrl
-        println("setting headshot")
-        let imageData: NSData = NSData(contentsOfURL: NSURL(string: headshotUrl)!)!
-        println("loaded data")
-        self.imageView.image = UIImage(data: imageData)
-        self.imageView.setNeedsDisplay()
-        self.view.setNeedsDisplay()
-    }
     
-    func setCurrentLocation(location: CLLocation) {
-        self.currentLocation = location
-        println("setting location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
-    }
+    // MARK: CLLocationManagerDelegate
 
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-        let lastLocation: CLLocation = locations.last as CLLocation
-        setCurrentLocation(lastLocation)
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[CLLocation]) {
+        let lastLocation: CLLocation = locations.last! as CLLocation
+        currentLocation = lastLocation
     }
     
     func locationManager(manager: CLLocationManager,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        println("auth status change")
+        print("auth status change")
         locationManager.startMonitoringSignificantLocationChanges()
     }
 

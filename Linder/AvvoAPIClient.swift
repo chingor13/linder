@@ -11,7 +11,7 @@ import Foundation
 class AvvoAPIClient {
     
     class func fetchLawyers(lawyerHandler: (Array<Lawyer>) -> ()) -> Void {
-        var lawyers: Array<Lawyer> = [
+        let lawyers: Array<Lawyer> = [
             Lawyer(firstname: "Jackie",
                 lastname: "Chiles",
                 headshot: UIImage(named: "jackie")!
